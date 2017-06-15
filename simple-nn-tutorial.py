@@ -4,6 +4,14 @@ import tensorflow as tf
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 sess = tf.InteractiveSession()
 
+batch = mnist.train.next_batch(50)
+print('\n\n\n\n\n\n\n\n\n\n')
+print(len(batch))
+print(len(batch[0]))
+print(len(batch[0][0]))
+print(batch[0][0][0])
+print('\n\n\n\n\n\n\n\n\n\n')
+
 ######################################
 ## Build a Softmax Regression Model ##
 ######################################
