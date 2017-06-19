@@ -4,6 +4,7 @@ import tensorflow as tf
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 sess = tf.InteractiveSession()
 
+'''
 batch = mnist.train.next_batch(50)
 print('\n\n\n\n\n\n\n\n\n\n')
 print(len(batch))
@@ -11,6 +12,7 @@ print(len(batch[0]))
 print(len(batch[0][0]))
 print(batch[0][0][0])
 print('\n\n\n\n\n\n\n\n\n\n')
+'''
 
 ######################################
 ## Build a Softmax Regression Model ##
@@ -70,7 +72,11 @@ W_conv1 = weight_variable([5, 5, 1, 32])
 b_conv1 = bias_variable([32])
 x_image = tf.reshape(x, [-1,28,28,1])
 h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
+print('11111111111111111111111')
+print(h_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
+print(h_pool1)
+print('22222222222222222222222')
 
 # Second Convolutional Layer
 W_conv2 = weight_variable([5, 5, 32, 64])
